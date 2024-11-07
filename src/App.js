@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
 import AuthenticationComponent from "./AuthenticationComponent";
@@ -11,7 +11,7 @@ import { NavigationProvider } from "./common/history";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavigationProvider>
         <Routes>
           <Route path="/signUp" exact Component={SignUp} />
@@ -25,7 +25,7 @@ function App() {
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </NavigationProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
